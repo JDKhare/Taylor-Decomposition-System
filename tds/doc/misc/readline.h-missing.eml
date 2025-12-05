@@ -1,0 +1,119 @@
+Received: from hermes.ecs.umass.edu (128.119.91.230) by meltdown.ecs.umass.edu
+ (128.119.91.248) with Microsoft SMTP Server id 8.2.255.0; Sun, 3 Mar 2013
+ 23:33:34 -0500
+Received: from [192.168.1.108]
+ (209-6-145-112.c3-0.bkl-ubr1.sbo-bkl.ma.cable.rcn.com [209.6.145.112])
+	(authenticated bits=0)	by hermes.ecs.umass.edu (8.14.2/8.14.2) with ESMTP id
+ r244X5UN016697	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256
+ verify=NO)	for <ciesiel@ecs.umass.edu>; Sun, 3 Mar 2013 23:33:06 -0500
+From: daniel <dgomezpr@ecs.umass.edu>
+To: "Maciej J. Ciesielski" <ciesiel@ecs.umass.edu>
+Date: Sun, 3 Mar 2013 23:33:31 -0500
+Subject: Re: Compiling ABC - readline.h missing
+Thread-Topic: Compiling ABC - readline.h missing
+Thread-Index: Ac4YkW74m0/gn+DjQ8inOnc4hB8hRg==
+Message-ID: <5134241B.401@ecs.umass.edu>
+References: <96CDECE9F7704B4D9C0DA9488C0B357EC9203D9E17@meltdown>
+In-Reply-To: <96CDECE9F7704B4D9C0DA9488C0B357EC9203D9E17@meltdown>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-AuthSource: meltdown.ecs.umass.edu
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-SenderIdResult: Pass
+X-MS-Exchange-Organization-SCL: 0
+X-MS-Exchange-Organization-PCL: 2
+X-MS-Exchange-Organization-PRD: ecs.umass.edu
+X-MS-TNEF-Correlator:
+user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:19.0) Gecko/20130117
+ Thunderbird/19.0
+received-spf: Pass (meltdown.ecs.umass.edu: domain of dgomezpr@ecs.umass.edu
+ designates 128.119.91.230 as permitted sender)
+ receiver=meltdown.ecs.umass.edu; client-ip=128.119.91.230;
+ helo=hermes.ecs.umass.edu;
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hi professor,
+
+REGARDING fn:
+---------------------
+We can look on your .bashrc on Tuesday, I should be available some time=20
+after 1pm. Briefly, all aliases loaded by the .bashrc login script are=20
+located in files provided within .bashrc in the form of:
+
+if [ -f $HOME/.file ]; then
+   . $HOME/.file
+fi
+
+typical file names are: { .aliases, .bashrc_aliases, .functions,=20
+.bashrc_functions, /etc/bash_completion } In any case, the file must be=20
+listed in the login script run by the shell. Sometimes the loaded file,=20
+points to other locations as well, so it is important to check any other=20
+file loading.
+
+
+Regarding ABC:
+---------------------
+As you mention you are missing the readline libraries. You can type in=20
+your ubuntu box:
+
+$ apt-cache search libreadline
+
+and it should print
+
+xxxxxxxxxxxxxxxxxxxxxxxxxx
+libreadline6 xxxxxxxxxxxxxx
+libreadline6-dev xxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxx
+
+If you don't have those lines, then your compilation is rightfully=20
+failing. To fix that,
+please type:
+
+$ sudo apt-get install libreadline6 libreadline6-dev
+
+This should resolve the compilation issue for ABC (and TDS should have=20
+the same problem in this machine)
+
+- EOF -
+
+best regards,
+Daniel
+
+On 3/3/2013 9:55 AM, Maciej J. Ciesielski wrote:
+> Daniel,
+>
+> Can you suggest how to fix this small compilation error in compiling ABC =
+on my machine at work, see the log below. It compiles OK on my old HP lapto=
+p at home, and will still have to check about my good old IBM laptop I keep=
+ at school and travel with.
+>
+> (Un)related issue : I cannot find where the missing file in the system is=
+ because my find command does not work on this computer (but works on chopi=
+n).  I cannot figure out where the abbreviation "fn" which seems to be inco=
+rrect is stored, .bashrc or .tcshrc,  the system seems to be running bash, =
+but takes aliases from some other places that I cannot figure out!
+>
+> BTW: will you be stopping by Monday at any time after 12:30 or Tuesday af=
+ter 11:30 to discuss misc. issues? Whatever is convenient for you.
+>
+> Here is the log: it is only related to the useful utility of completing t=
+he line, I think.
+> src/base/main/mainUtils.c:30:31: fatal error: readline/readline.h: No suc=
+h file or directory
+> compilation terminated.
+> make: *** [src/base/main/mainUtils.o] Error 1
+> chopin [alanmi-abc-283888f98f3d]>
+>
+> Thanks,
+>
+>     Maciej
+>
+> Maciej Ciesielski
+> Professor, Associate Department Head
+> ECE Dept, University of Massachusetts , Amherst, MA 01003
+> phone: (413) 545-0401    fax:   (413) 545-1993
+> http://www.ecs.umass.edu/ece/labs/vlsicad/ciesielski.html
+

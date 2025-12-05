@@ -1,0 +1,133 @@
+/*
+ * TDS to C translation 
+ * Header file used by Gaut
+ *
+ */
+/*
+ * Arithmetic operations
+ */
+int op_max( int left, int right) {
+	return (left>right) ? left : right;
+}
+int op_min( int left, int right) {
+ 	return (left<right) ? left : right;
+}
+int op_div(int op1, int op2) {
+	return op1/op2;
+}
+int op_mul(int op1, int op2) {
+	return op1*op2;
+}
+int op_add(int op1, int op2) {
+	return op1+op2;
+}
+int op_sub(int op1, int op2) {
+	return op1-op2;
+}
+/*
+ * Comparison Operations
+ */
+bool op_eq(int op1, int op2) {
+	return op1==op2;
+}
+bool op_ne(int op1, int op2) {
+	return op1!=op2;
+}
+bool op_le(int op1, int op2) {
+	return op1<=op2;
+}
+bool op_ge(int op1, int op2) {
+	return op1>=op2;
+}
+bool op_lt(int op1, int op2) {
+	return op1<op2;
+}
+bool op_gt(int op1, int op2) {
+	return op1>op2;
+}
+int op_eqmux(int op1, int op2, int m1, int m2) {
+	return (op1==op2) ? m1 : m2;
+}
+int op_nemux(int op1, int op2, int m1, int m2) {
+	return (op1!=op2) ? m1 : m2;
+}
+int op_lemux(int op1, int op2, int m1, int m2) {
+	return (op1<=op2) ? m1 : m2;
+}
+int op_gemux(int op1, int op2, int m1, int m2) {
+	return (op1>=op2) ? m1 : m2;
+}
+int op_ltmux(int op1, int op2, int m1, int m2) {
+	return (op1<op2) ? m1 : m2;
+}
+int op_gtmux(int op1, int op2, int m1, int m2) {
+	return (op1>op2) ? m1 : m2;
+}
+/*
+ * Logic Operations
+ */
+int op_and(int op1, int op2) {
+	return op1&&op2;
+}
+int op_nand(int op1, int op2) {
+	return ~(op1&op2);
+}
+int op_or(int op1, int op2) {
+	return op1|op2;
+}
+int op_nor(int op1, int op2) {
+	return ~(op1|op2);
+}
+int op_xor(int op1, int op2) {
+	return (op1^op2);
+}
+int op_not(int op) {
+	return ~op;
+}
+/*
+ * Shift Operations
+ */
+/* Shift Left Logic */
+int op_sll(int op1, int op2) {
+	return op1<<op2;
+}
+/* Shift Left Arithmetic SLA==SLL*/
+int op_sla(int op1, int op2) {
+	return op1<<op2;
+}
+/* shift Right Logic */
+int op_srl(int op1, int op2) {
+	return op2>>op1;
+}
+/* Shift Right Arithmetic */
+int op_sra(int op1, int op2) {
+	return op1/(2<<op2);
+}
+/* Rotate Left logical */
+int op_rol(int value, int places) {
+	return (value<<places)|(value>>(sizeof(int)*8-places));
+}
+/* Rotate Right logical */
+int op_ror(int value, int places) {
+	return (value>>places)|(value<<(sizeof(int)*8-places));
+}
+int op_shr(int op1, int op2) {
+	return op_srl((unsigned)op1,(unsigned)op2);
+}
+int op_shl(int op1, int op2) {
+	return op_sll((unsigned)op1,(unsigned)op2);
+}
+/*
+ * Others
+ */
+/*
+int op_discriminant(int op1, int op2) {
+	return 1;
+}
+int op_shr4div(int op1, int op2) {
+	return 1;
+}
+*/
+int op_assign(int op) {
+	return op;
+}

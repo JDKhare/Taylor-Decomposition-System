@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="main">
+      <UniqueIdentifier>{9b85a947-c5d3-4ac8-8249-1a21083ab361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ted">
+      <UniqueIdentifier>{ec3a37ee-f683-48f4-ada5-49d341734c85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ted\source">
+      <UniqueIdentifier>{613c6be3-a204-486a-a0b3-e740162a602e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ted\header">
+      <UniqueIdentifier>{0178b872-666b-47dd-bed3-e5365ded3362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="poly">
+      <UniqueIdentifier>{a158c11a-0635-4cac-9c64-1faf57008e3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tds">
+      <UniqueIdentifier>{ec71be85-e244-41d2-80f3-d4708ace6dd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="transform">
+      <UniqueIdentifier>{2c8aa1e7-b95d-49ea-ad65-736303622eaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{6fa43b20-27e3-4785-8de1-005dd030a253}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shell">
+      <UniqueIdentifier>{10b37cc9-bcc4-41c4-b22b-654eb82e7885}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ntk">
+      <UniqueIdentifier>{2a67cd61-2c72-4ce9-b5bf-5fad63ac3a49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dfg">
+      <UniqueIdentifier>{78173592-74ca-4b22-b614-cd4f857f1d8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{8b4da11a-9477-4d3a-9649-0482c816df26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="convert">
+      <UniqueIdentifier>{85f155e1-0cde-42b3-8d7f-e6ca4059fd09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="data">
+      <UniqueIdentifier>{6f63925f-a14b-4b32-8813-8abae5b9f2a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win resource">
+      <UniqueIdentifier>{18cdf9ad-4bda-4fb0-8668-04cf35f50a28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="dfg\xml">
+      <UniqueIdentifier>{e9269538-a31c-4894-b8d2-e9f0def1ec5f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main\main.cc">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\ATedNode.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\ETedNode.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedBitwidth.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedContainer.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedDecompose.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedKids.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedMan.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedManCSE.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedManDebug.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedManOrder.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedManWriteTed.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedNode.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedNodeIterator.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedOrderCost.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedOrderProper.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedOrderReloc.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedOrderStrategy.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedOrderSwap.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedRetiming.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedVar.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedVarMan.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\poly\pman.cc">
+      <Filter>poly</Filter>
+    </ClCompile>
+    <ClCompile Include="src\poly\pnode.cc">
+      <Filter>poly</Filter>
+    </ClCompile>
+    <ClCompile Include="src\poly\poly.cc">
+      <Filter>poly</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tds\Environment.cc">
+      <Filter>tds</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tds\Tds.cc">
+      <Filter>tds</Filter>
+    </ClCompile>
+    <ClCompile Include="src\tds\TdsCmd.cc">
+      <Filter>tds</Filter>
+    </ClCompile>
+    <ClCompile Include="src\transform\matrice.cpp">
+      <Filter>transform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\CompilerMingWin.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\CompilerMsc.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\csd.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\ParseOption.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\PrimeGenerator.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\string.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\system.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\SystemGcc.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\SystemLinux.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\SystemMsc.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util\SystemWin.cc">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shell\shell.cc">
+      <Filter>shell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ntk\Node.cc">
+      <Filter>ntk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ntk\Ntk.cc">
+      <Filter>ntk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dfg\DfgBitReduction.cc">
+      <Filter>dfg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dfg\DfgMan.cc">
+      <Filter>dfg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dfg\DfgManDebug.cc">
+      <Filter>dfg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dfg\DfgManFromTedMan.cc">
+      <Filter>dfg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dfg\DfgManWrite.cc">
+      <Filter>dfg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dfg\DfgNode.cc">
+      <Filter>dfg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dfg\DfgOperator.cc">
+      <Filter>dfg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dfg\DfgShifter.cc">
+      <Filter>dfg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\Convert.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\ConvertDfg2Ntl.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\ConvertDfg2Ted.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\ConvertDfg2TedError.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\ConvertNtl2Ted.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\ConvertTed2Dfg.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\ConvertTed2DfgFactor.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\MapDfgNode.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\MapDfgPI.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convert\MapDfgTed.cc">
+      <Filter>convert</Filter>
+    </ClCompile>
+    <ClCompile Include="src\data\Bitwidth.cc">
+      <Filter>data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lib\RNGenerator.cc">
+      <Filter>lib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ntk\Gaut.cc">
+      <Filter>ntk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ntk\Quartus.cc">
+      <Filter>ntk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedManEval.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedOrderCostCustom.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedParents.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ted\TedOrder.cc">
+      <Filter>ted\source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\3rdparty\tinyxml2\tinyxml2.cpp">
+      <Filter>dfg\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dfg\XMLImport.cc">
+      <Filter>dfg</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\ted\ETedNode.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\ted\TedContainer.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\ted\TedKids.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\ted\TedMan.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\ted\TedNode.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\ted\TedNodeRoot.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\ted\TedParents.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\ted\TedVar.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\ted\TedVarGroup.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\ted\TedVarMan.inl">
+      <Filter>ted</Filter>
+    </None>
+    <None Include="src\poly\pnode.inl">
+      <Filter>poly</Filter>
+    </None>
+    <None Include="src\util\ParseOption.inl">
+      <Filter>util</Filter>
+    </None>
+    <None Include="src\ntk\Node.inl">
+      <Filter>ntk</Filter>
+    </None>
+    <None Include="src\dfg\DfgMan.inl">
+      <Filter>dfg</Filter>
+    </None>
+    <None Include="src\dfg\DfgNode.inl">
+      <Filter>dfg</Filter>
+    </None>
+    <None Include="src\dfg\DfgShifter.inl">
+      <Filter>dfg</Filter>
+    </None>
+    <None Include="src\data\Bitwidth.inl">
+      <Filter>data</Filter>
+    </None>
+    <None Include="ToDo" />
+    <None Include="src\win resource\tds.ico">
+      <Filter>win resource</Filter>
+    </None>
+    <None Include="src\win resource\tds.aliases">
+      <Filter>win resource</Filter>
+    </None>
+    <None Include="src\dfg\DfgOperator.inl">
+      <Filter>dfg</Filter>
+    </None>
+    <None Include="tds.aliases" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\ted\ATedNode.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\ETedNode.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedBitwidth.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedContainer.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedDecompose.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedKid.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedKids.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedKidsIterator.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedMan.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedNode.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedNodeIterator.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedNodeRoot.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedOrderCost.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedOrderStrategy.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedParents.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedRegister.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedRetiming.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedVar.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedVarGroup.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedVarMan.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\poly\pman.h">
+      <Filter>poly</Filter>
+    </ClInclude>
+    <ClInclude Include="src\poly\pnode.h">
+      <Filter>poly</Filter>
+    </ClInclude>
+    <ClInclude Include="src\poly\poly.h">
+      <Filter>poly</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tds\Environment.h">
+      <Filter>tds</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tds\Tds.h">
+      <Filter>tds</Filter>
+    </ClInclude>
+    <ClInclude Include="src\transform\Cmatrice.h">
+      <Filter>transform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\transform\matrice.h">
+      <Filter>transform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\CompilerMingWin.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\CompilerMsc.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\csd.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\ParseOption.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\PrimeGenerator.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\util.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\Completer.h">
+      <Filter>shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\shell.h">
+      <Filter>shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ntk\Node.h">
+      <Filter>ntk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ntk\Ntk.h">
+      <Filter>ntk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dfg\DfgBitReduction.h">
+      <Filter>dfg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dfg\DfgMan.h">
+      <Filter>dfg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dfg\DfgNode.h">
+      <Filter>dfg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dfg\DfgOperator.h">
+      <Filter>dfg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dfg\DfgShifter.h">
+      <Filter>dfg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dfg\DfgStat.h">
+      <Filter>dfg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\BinaryThreadedNode.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\BinaryThreadedTree.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\LinkedMap.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\LinkedSet.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\Mark.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\Convert.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\ConvertDfg2Ntl.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\ConvertDfg2Ted.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\ConvertDfg2TedError.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\ConvertMap.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\ConvertNtl2Ted.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\ConvertTed2Dfg.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\ConvertTed2DfgFactor.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\MapDfgNode.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\MapDfgPI.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\convert\MapDfgTed.h">
+      <Filter>convert</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data\Bitwidth.h">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\data\Error.h">
+      <Filter>data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lib\RNGenerator.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ntk\Gaut.h">
+      <Filter>ntk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ntk\Quartus.h">
+      <Filter>ntk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\types.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedOrderCostCustom.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ted\TedOrder.h">
+      <Filter>ted\header</Filter>
+    </ClInclude>
+    <ClInclude Include="src\win resource\resource.h">
+      <Filter>win resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\3rdparty\tinyxml2\tinyxml2.h">
+      <Filter>dfg\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dfg\XMLImport.h">
+      <Filter>dfg</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\win resource\Tds.rc">
+      <Filter>win resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

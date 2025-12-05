@@ -1,0 +1,547 @@
+# This is based on VirtexE_xcv1000e-6 FPGA carac, but ...
+# all power values are NULL because power carac not validated with ISE
+
+# warning : characterizing error in operator : component div_op
+
+
+bits(16)
+operator(modnn_op) {
+      function               modnn;
+	component              modnn_op;
+	type                   combinatorial;
+	propagation_time       27;
+	combinational_delay       27;
+	area                   129;
+	power                  0;	
+}
+
+operator(mac_op) {
+      function               mac;
+	component              mac_op;
+	type                   synchronous;
+	minimum_period       10;
+	latency       3;
+	cadency       3;
+	propagation_time       27;
+	combinational_delay       27;
+	area                   129;
+	power                  0;
+	input_begins		   0, 0, 1;
+	output_begins		   3;
+          clk_port               clk;
+          rst_port               Rstb;
+          rst_pol                0;
+}
+
+operator(syndrome_op) {
+          function               syndrome;
+          type                   synchronous;
+          minimum_period       10;
+          propagation_time       24;
+          area                   2878;
+          power                  0;
+          latency                147;
+          cadency                148;
+          clk_port               clk;
+          rst_port               Rstb;
+          rst_pol                0;
+          input_ports            BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome ,BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome ,BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome ,BUS_DONNEES_1_syndrome, BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome ,BUS_DONNEES_1_syndrome;
+          input_map              recd0,recd1,recd2,recd3,recd4,recd5,recd6,recd7,recd8,recd9,recd10,recd11,recd12,recd13,recd14;
+          output_ports           BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome , BUS_DONNEES_1_syndrome,BUS_DONNEES_1_syndrome ,BUS_DONNEES_1_syndrome;
+          output_map             s0,s1,s2,s3,syn_error;
+          input_begins           0,4,8,12,16,20,24,28,32,36,40,44,48,52,56;
+          output_begins          143,144,145,146,147;
+          communication          synchronous; #asynchronous
+          NoFSM                  No;#yes
+ }
+operator(polylocal_op) {
+         function                polylocal;
+         type                    synchronous;
+          minimum_period       10;
+         propagation_time        25;
+         area                    1632;
+         power                   0;
+         latency                 81;
+         cadency                 81;
+         clk_port                clk;
+         rst_port                rstb;
+         rst_pol                 0;
+         input_ports             BUS_DONNEES_1_polylocal,BUS_DONNEES_1_polylocal,BUS_DONNEES_1_polylocal,BUS_DONNEES_1_polylocal;
+         input_map               s0,s1,s2,s3;
+         output_ports            BUS_DONNEES_1_polylocal,BUS_DONNEES_1_polylocal,BUS_DONNEES_1_polylocal,BUS_DONNEES_1_polylocal;
+         output_map              lambda0,lambda1,lambda2,lambda3;
+         input_begins            0,1,4,8;
+         output_begins           78,79,80,81;
+         communication           synchronous; #asynchronous
+         NoFSM                   No;#yes
+}
+operator(polyeval_op){
+        function                 polyeval;
+        type                     synchronous;
+          minimum_period       10;
+        propagation_time         24;
+        area                     1190;
+        power                    0;
+        latency                  60;
+        cadency                  60;
+        clk_port                 clk;
+        rst_port                 rstb;
+        rst_pol                  0;
+        input_ports              BUS_DONNEES_1_polyeval ,BUS_DONNEES_1_polyeval ,BUS_DONNEES_1_polyeval, BUS_DONNEES_1_polyeval ,BUS_DONNEES_1_polyeval ,BUS_DONNEES_1_polyeval , BUS_DONNEES_1_polyeval ,BUS_DONNEES_1_polyeval,BUS_DONNEES_1_polyeval;
+        input_map                deg_lambdas, s0,s1,s2,s3,lambda0,lambda1,lambda2,lambda3;
+        output_ports             BUS_DONNEES_1_polyeval ,BUS_DONNEES_1_polyeval ,BUS_DONNEES_1_polyeval, BUS_DONNEES_1_polyeval ,BUS_DONNEES_1_polyeval ;
+        output_map               deg_omegas,omega0,omega1,omega2,omega3;
+        input_begins             0,1,12,16,8,17,18,19,20;
+        output_begins            60,56,57,58,59;
+        communication            synchronous; #asynchronous
+         NoFSM                   no;#yes
+}
+
+
+ operator(eval_op){
+          function              eval;
+          type                  synchronous;
+          minimum_period       8;
+           propagation_time      8;
+           area                  1112;
+           power                 0;
+           latency               77;
+           cadency               77;
+           clk_port              clk;
+           rst_port              rstb;
+           rst_pol               0;
+           input_ports           BUS_DONNEES_1_eval ,BUS_DONNEES_1_eval, BUS_DONNEES_1_eval, BUS_DONNEES_1_eval, BUS_DONNEES_1_eval, BUS_DONNEES_1_eval, BUS_DONNEES_1_eval ,BUS_DONNEES_1_eval ,BUS_DONNEES_1_eval, BUS_DONNEES_1_eval, BUS_DONNEES_1_eval, BUS_DONNEES_1_eval, BUS_DONNEES_1_eval, BUS_DONNEES_1_eval ,BUS_DONNEES_1_eval, BUS_DONNEES_1_eval , BUS_DONNEES_1_eval,BUS_DONNEES_1_eval;
+           input_map             g,deg_lambda,deg_omega,lambda0,lambda1,lambda2,lambda3,s0,s1,s2,s3,omega0,omega1,omega2,omega3,root0,root1,root2;
+           output_ports          BUS_DONNEES_1_eval,BUS_DONNEES_1_eval,BUS_DONNEES_1_eval;
+           output_map            den,numo1,num2;
+           input_begins          40,8,0,12,13,14,15,16,17,19,20,21,22,23,24,25,26,27;
+           output_begins         75,76,77;
+           communication         synchronous; #asynchronous
+           NoFSM                 yes;#no
+ }
+
+ operator(correction_op){
+           function              correction;
+           type                  synchronous;
+           minimum_period      13;
+           propagation_time      13;
+           area                  494;
+           power                 0;
+           latency               23;
+           cadency               23;
+           clk_port              clk;
+           rst_port              rstb;
+           rst_pol               0;
+           input_ports           BUS_DONNEES_1_correction, BUS_DONNEES_1_correction, BUS_DONNEES_1_correction, BUS_DONNEES_1_correction ;
+           input_map             recdposerre,num1,num2,den;
+           output_ports          BUS_DONNEES_1_correction ;
+           output_map            recdposerrs;
+           input_begins          12,4,8,0;
+           output_begins         23;
+           communication         synchronous; #asynchronous
+           NoFSM                 no;#yes
+ }
+
+
+operator(assign_op) {
+	function               assign;
+	type                   synchronous;
+      minimum_period      0;
+	propagation_time       0;
+	combinational_delay    	0;
+	area                   0;
+	power                  0;
+	latency                1;
+	cadency                1;
+	passThrough            yes; # no hardware
+}
+
+
+
+operator(mem_read_op) {
+	function               mem_read;
+	type                   synchronous;
+      minimum_period      0;
+	propagation_time       0;
+	combinational_delay    	0;
+	area                   0;
+	power                  0;
+	latency                1;
+	cadency                1;
+	passThrough            yes; # no hardware
+}
+operator(mem_write_op) {
+	function               mem_write;
+	type                   synchronous;
+      minimum_period      0;
+	propagation_time       0;
+	combinational_delay    	0;
+	area                   0;
+	power                  0;
+	latency                1;
+	cadency                1;
+	passThrough            yes; # no hardware
+}
+
+operator(abs_op) {
+	function               abs;
+	component              abs_op;
+	type                   combinatorial;
+	propagation_time       7;
+	combinational_delay       7;
+	area                   18;
+	power                  0;
+}
+
+operator(add_op) {
+	function               add;
+	component              add_op;
+	type                   combinatorial;
+	propagation_time       7;
+	combinational_delay       7;
+	area                   8;
+	power                  0;
+}
+
+operator(and_op) {
+	function               and;
+	component              and_op;
+	type                   combinatorial;
+	propagation_time       4;
+	combinational_delay       4;
+	area                   9;
+	power                  0;
+}
+
+operator(div_op) {
+	function               div;
+	component              div_op;
+	type                   combinatorial;
+	propagation_time       1; # error (default value: 1 ns)
+	combinational_delay       1;
+	area                   0; # error (default value: 0)
+	power                  0;
+}
+
+operator(eq_op) {
+	function               eq;
+	component              eq_op;
+	type                   combinatorial;
+	propagation_time       6;
+	combinational_delay       6;
+	area                   4;
+	power                  0;
+}
+
+operator(eqmux_op) {
+	function               eqmux;
+	component              eqmux_op;
+	type                   combinatorial;
+	propagation_time       9;
+	combinational_delay       9;
+	area                   13;
+	power                  0;
+}
+
+operator(ge_op) {
+	function               ge;
+	component              ge_op;
+	type                   combinatorial;
+	propagation_time       6;
+	combinational_delay       6;
+	area                   8;
+	power                  0;
+}
+
+operator(gemux_op) {
+	function               gemux;
+	component              gemux_op;
+	type                   combinatorial;
+	propagation_time       10;
+	combinational_delay       10;
+	area                   17;
+	power                  0;
+}
+
+operator(gt_op) {
+	function               gt;
+	component              gt_op;
+	type                   combinatorial;
+	propagation_time       9;
+	combinational_delay       9;
+	area                   8;
+	power                  0;
+}
+
+operator(gtmux_op) {
+	function               gtmux;
+	component              gtmux_op;
+	type                   combinatorial;
+	propagation_time       10;
+	combinational_delay       10;
+	area                   17;
+	power                  0;
+}
+
+operator(le_op) {
+	function               le;
+	component              le_op;
+	type                   combinatorial;
+	propagation_time       6;
+	combinational_delay       6;
+	area                   8;
+	power                  0;
+}
+
+operator(lemux_op) {
+	function               lemux;
+	component              lemux_op;
+	type                   combinatorial;
+	propagation_time       10;
+	combinational_delay       10;
+	area                   17;
+	power                  0;
+}
+
+operator(lt_op) {
+	function               lt;
+	component              lt_op;
+	type                   combinatorial;
+	propagation_time       9;
+	combinational_delay       9;
+	area                   8;
+	power                  0;
+}
+
+operator(ltmux_op) {
+	function               ltmux;
+	component              ltmux_op;
+	type                   combinatorial;
+	propagation_time       10;
+	combinational_delay       10;
+	area                   17;
+	power                  0;
+}
+
+operator(mod_op) {
+	function               mod;
+	component              mod_op;
+	type                   combinatorial;
+	propagation_time       4;
+	combinational_delay       4;
+	area                   61;
+	power                  0;
+}
+
+operator(mul_op) {
+	function               mul;
+	component              mul_op;
+	type                   combinatorial;
+	propagation_time       18;
+	combinational_delay       18;
+	area                   83;
+	power                  0;
+}
+
+operator(nand_op) {
+	function               nand;
+	component              nand_op;
+	type                   combinatorial;
+	propagation_time       4;
+	combinational_delay       4;
+	area                   9;
+	power                  0;
+}
+
+operator(ne_op) {
+	function               ne;
+	component              ne_op;
+	type                   combinatorial;
+	propagation_time       6;
+	combinational_delay       6;
+	area                   4;
+	power                  0;
+}
+
+operator(nemux_op) {
+	function               nemux;
+	component              nemux_op;
+	type                   combinatorial;
+	propagation_time       9;
+	combinational_delay       9;
+	area                   13;
+	power                  0;
+}
+
+operator(nor_op) {
+	function               nor;
+	component              nor_op;
+	type                   combinatorial;
+	propagation_time       4;
+	combinational_delay       4;
+	area                   9;
+	power                  0;
+}
+
+operator(not_op) {
+	function               not;
+	component              not_op;
+	type                   combinatorial;
+	propagation_time       4;
+	combinational_delay       4;
+	area                   0;
+	power                  0;
+}
+
+operator(or_op) {
+	function               or;
+	component              or_op;
+	type                   combinatorial;
+	propagation_time       4;
+	combinational_delay       4;
+	area                   9;
+	power                  0;
+}
+
+operator(rol_op) {
+	function               rol;
+	component              rol_op;
+	type                   combinatorial;
+	propagation_time       9;
+	combinational_delay       9;
+	area                   37;
+	power                  0;
+}
+
+operator(ror_op) {
+	function               ror;
+	component              ror_op;
+	type                   combinatorial;
+	propagation_time       9;
+	combinational_delay       9;
+	area                   37;
+	power                  0;
+}
+
+operator(shl_op) {
+	function               shl;
+	component              shl_op;
+	type                   combinatorial;
+	propagation_time       10;
+	combinational_delay       10;
+	area                   37;
+	power                  0;
+}
+
+operator(shr4div_op) {
+	function               shr4div;
+	component              shr4div_op;
+	type                   combinatorial;
+	propagation_time       15;
+	combinational_delay       15;
+	area                   62;
+	power                  0;
+}
+
+operator(shr_op) {
+	function               shr;
+	component              shr_op;
+	type                   combinatorial;
+	propagation_time       12;
+	combinational_delay       12;
+	area                   42;
+	power                  0;
+}
+
+operator(sla_op) {
+	function               sla;
+	component              sla_op;
+	type                   combinatorial;
+	propagation_time       14;
+	combinational_delay       14;
+	area                   84;
+	power                  0;
+}
+
+operator(sll_op) {
+	function               sll;
+	component              sll_op;
+	type                   combinatorial;
+	propagation_time       12;
+	combinational_delay       12;
+	area                   44;
+	power                  0;
+}
+
+operator(sra_op) {
+	function               sra;
+	component              sra_op;
+	type                   combinatorial;
+	propagation_time       15;
+	combinational_delay       15;
+	area                   83;
+	power                  0;
+}
+
+operator(srl_op) {
+	function               srl;
+	component              srl_op;
+	type                   combinatorial;
+	propagation_time       12;
+	combinational_delay       12;
+	area                   44;
+	power                  0;
+}
+
+operator(sub_op) {
+	function               sub;
+	component              sub_op;
+	type                   combinatorial;
+	propagation_time       7;
+	combinational_delay       7;
+	area                   8;
+	power                  0;
+}
+
+operator(uminus_op) {
+	function               uminus;
+	component              uminus_op;
+	type                   combinatorial;
+	propagation_time       6;
+	combinational_delay       6;
+	area                   9;
+	power                  0;
+}
+
+operator(xor_op) {
+	function               xor;
+	component              xor_op;
+	type                   combinatorial;
+	propagation_time       4;
+	combinational_delay       4;
+	area                   9;
+	power                  0;
+}
+
+operator(discriminant_op) {
+	function               	discriminant;
+	component              	discriminant_op;
+	type                   	synchronous;
+	communication			synchronous;
+      minimum_period      10;
+	propagation_time       	20; 
+	combinational_delay	20; 
+	area                   	36;
+	power                  	0;
+	latency                	2;
+	cadency                	2;
+	input_ports				BUS_DONNEES_1_discriminant, BUS_DONNEES_2_discriminant;
+	input_map				a, b;
+	output_ports			BUS_DONNEES_3_discriminant;
+	output_map				o;
+	clk_port 				clk;		# name of input clock port
+	rst_port 				rstb;		# name of input reset port
+	rst_pol 				low;		# polarity of reset
+	enable_port 			enable;	# name of input reset port
+	enable_pol 				high;		# polarity of reset
+}

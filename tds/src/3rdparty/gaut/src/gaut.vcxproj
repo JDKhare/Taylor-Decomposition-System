@@ -1,0 +1,222 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <SccProjectName />
+    <SccLocalPath />
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\..\..\..\..\Debug\Win32Gaut\</OutDir>
+    <IntDir>.\..\..\..\..\Debug\Win32Gaut\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)32</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\..\..\..\..\Release\Win32Gaut\</OutDir>
+    <IntDir>.\..\..\..\..\Release\Win32Gaut\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;CHECK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <PrecompiledHeaderFile>
+      </PrecompiledHeaderFile>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Debug\gaut.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x040c</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalOptions> /FIXED:NO</AdditionalOptions>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <StackReserveSize>134217728</StackReserveSize>
+      <StackCommitSize>134217728</StackCommitSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <FunctionLevelLinking>false</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <WarningLevel>Level3</WarningLevel>
+      <AdditionalOptions> /vmg</AdditionalOptions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <OmitFramePointers>true</OmitFramePointers>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BrowseInformation>true</BrowseInformation>
+      <PrecompiledHeaderOutputFile>.\Release\gaut.pch</PrecompiledHeaderOutputFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\gaut.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x040c</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(OutDir)$(TargetName).bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <AdditionalDependencies>odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <StackReserveSize>16777216</StackReserveSize>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="allocation.cpp" />
+    <ClCompile Include="b_graph.cpp" />
+    <ClCompile Include="bus.cpp" />
+    <ClCompile Include="cdfg.cpp">
+      <Optimization Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MaxSpeed</Optimization>
+    </ClCompile>
+    <ClCompile Include="cdfg2c.cpp" />
+    <ClCompile Include="check.cpp" />
+    <ClCompile Include="clock.cpp" />
+    <ClCompile Include="cycles.cpp" />
+    <ClCompile Include="debug_toggles.cpp" />
+    <ClCompile Include="dot_gantt.cpp" />
+    <ClCompile Include="dot_mem.cpp" />
+    <ClCompile Include="function.cpp" />
+    <ClCompile Include="ic.cpp" />
+    <ClCompile Include="io_constraints.cpp" />
+    <ClCompile Include="lib.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mapping_constraints.cpp" />
+    <ClCompile Include="mentor_type.cpp" />
+    <ClCompile Include="multimode.cpp" />
+    <ClCompile Include="multimode_binding.cpp" />
+    <ClCompile Include="multimode_tools.cpp" />
+    <ClCompile Include="munkres.cpp" />
+    <ClCompile Include="operation.cpp" />
+    <ClCompile Include="operator.cpp" />
+    <ClCompile Include="ordo2c.cpp" />
+    <ClCompile Include="parse.cpp" />
+    <ClCompile Include="pattern.cpp" />
+    <ClCompile Include="port.cpp" />
+    <ClCompile Include="reg.cpp" />
+    <ClCompile Include="resizing.cpp" />
+    <ClCompile Include="scheduling.cpp" />
+    <ClCompile Include="selection.cpp" />
+    <ClCompile Include="soclib.cpp" />
+    <ClCompile Include="switches.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="allocation.h" />
+    <ClInclude Include="b_graph.h" />
+    <ClInclude Include="bank.h" />
+    <ClInclude Include="bus.h" />
+    <ClInclude Include="cadency.h" />
+    <ClInclude Include="cdfg.h" />
+    <ClInclude Include="cdfg2c.h" />
+    <ClInclude Include="check.h" />
+    <ClInclude Include="clock.h" />
+    <ClInclude Include="connection.h" />
+    <ClInclude Include="control.h" />
+    <ClInclude Include="cycles.h" />
+    <ClInclude Include="data.h" />
+    <ClInclude Include="dot_gantt.h" />
+    <ClInclude Include="dot_mem.h" />
+    <ClInclude Include="function.h" />
+    <ClInclude Include="graph.h" />
+    <ClInclude Include="ic.h" />
+    <ClInclude Include="io_constraints.h" />
+    <ClInclude Include="lib.h" />
+    <ClInclude Include="local_search.h" />
+    <ClInclude Include="map.h" />
+    <ClInclude Include="mapping_constraints.h" />
+    <ClInclude Include="matrix.h" />
+    <ClInclude Include="mem.h" />
+    <ClInclude Include="mentor_type.h" />
+    <ClInclude Include="multimode_binding.h" />
+    <ClInclude Include="multimode_tools.h" />
+    <ClInclude Include="munkres.h" />
+    <ClInclude Include="operation.h" />
+    <ClInclude Include="operator.h" />
+    <ClInclude Include="ordo2c.h" />
+    <ClInclude Include="os_tools.h" />
+    <ClInclude Include="parser.h" />
+    <ClInclude Include="pattern.h" />
+    <ClInclude Include="port.h" />
+    <ClInclude Include="ref.h" />
+    <ClInclude Include="reg.h" />
+    <ClInclude Include="resizing.h" />
+    <ClInclude Include="scheduling.h" />
+    <ClInclude Include="selection.h" />
+    <ClInclude Include="soclib.h" />
+    <ClInclude Include="switches.h" />
+    <ClInclude Include="timeUnits.h" />
+    <ClInclude Include="value.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,15 @@
+#######################################
+# GAUT Cost generated for TDS.        #
+# Daniel Gomez-Prado                  #
+#######################################
+# regAfterOp.gcost
+cdfg_latency = 2
+mul_op = 1
+op_total = 1
+op_add_total = 0
+op_mul_total = 1
+op_sub_total = 0
+op_area = 83
+mux2to1_io_instance = 0
+mux2to1 = 0
+ffs = 48

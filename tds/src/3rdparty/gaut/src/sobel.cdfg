@@ -1,0 +1,969 @@
+#LAB-STICC-UBS, 2008
+#Date: Tue Nov 16 11:07:43 2010
+
+#Entity : sobel
+source(sobel_start) {
+	targets const_2,
+	PImTmpLPAREN1RPAREN,
+	PImTmpLPAREN9RPAREN,
+	PImTmp2LPAREN3RPAREN,
+	PImTmp2LPAREN1RPAREN,
+	PImTmp2LPAREN2RPAREN,
+	PImTmp2LPAREN7RPAREN,
+	PImTmp2LPAREN8RPAREN,
+	PImTmp2LPAREN9RPAREN,
+	PImVLPAREN1RPAREN,
+	PImHLPAREN1RPAREN,
+	PImVLPAREN9RPAREN,
+	PImHLPAREN9RPAREN,
+	const_1,
+	PImInLPAREN2RPAREN,
+	PImInLPAREN3RPAREN,
+	PImInLPAREN1RPAREN,
+	PImInLPAREN4RPAREN,
+	PImInLPAREN5RPAREN,
+	PImInLPAREN6RPAREN,
+	PImInLPAREN7RPAREN,
+	PImInLPAREN8RPAREN,
+	PImInLPAREN9RPAREN;
+}
+#Constant declaration
+constant(const_2) {
+	bitwidth 32;
+	signed 1;
+	value 2;
+	bank 0;
+	address 0;
+	hardwire 1;
+}
+constant(PImTmpLPAREN1RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 1;
+	hardwire 1;
+}
+constant(PImTmpLPAREN9RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 2;
+	hardwire 1;
+}
+constant(PImTmp2LPAREN3RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 3;
+	hardwire 1;
+}
+constant(PImTmp2LPAREN1RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 4;
+	hardwire 1;
+}
+constant(PImTmp2LPAREN2RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 5;
+	hardwire 1;
+}
+constant(PImTmp2LPAREN7RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 6;
+	hardwire 1;
+}
+constant(PImTmp2LPAREN8RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 7;
+	hardwire 1;
+}
+constant(PImTmp2LPAREN9RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 8;
+	hardwire 1;
+}
+constant(PImVLPAREN1RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 9;
+	hardwire 1;
+}
+constant(PImHLPAREN1RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 10;
+	hardwire 1;
+}
+constant(PImVLPAREN9RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 11;
+	hardwire 1;
+}
+constant(PImHLPAREN9RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+	bank 0;
+	address 12;
+	hardwire 1;
+}
+constant(const_1) {
+	bitwidth 1;
+	signed 0;
+	value 1;
+	bank 0;
+	address 13;
+	hardwire 1;
+}
+#Input declaration
+input(PImInLPAREN2RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+input(PImInLPAREN3RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+input(PImInLPAREN1RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+input(PImInLPAREN4RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+input(PImInLPAREN5RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+input(PImInLPAREN6RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+input(PImInLPAREN7RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+input(PImInLPAREN8RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+input(PImInLPAREN9RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+#Output declaration
+output(PImOutLPAREN4RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+output(PImOutLPAREN5RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+output(PImOutLPAREN6RPAREN) {
+	bitwidth 32;
+	signed 1;
+}
+#Variable declaration
+variable(min) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmpLPAREN2RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(min000001) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1000001) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2000001) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmpLPAREN3RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(min000002) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1000002) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2000002) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmpLPAREN4RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(min000003) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1000003) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2000003) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmpLPAREN5RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(min000004) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1000004) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2000004) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmpLPAREN6RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(min000005) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1000005) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2000005) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmpLPAREN7RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(min000006) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1000006) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2000006) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmpLPAREN8RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(min000007) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1000007) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2000007) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmp2LPAREN4RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(min000008) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1000008) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2000008) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmp2LPAREN5RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(min000009) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max1000009) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(max2000009) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImTmp2LPAREN6RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImVLPAREN2RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+temporary(sobel_1697) {
+	bitwidth 32;
+	signed 1;
+}
+temporary(sobel_1698) {
+	bitwidth 32;
+	signed 1;
+}
+variable(PImHLPAREN2RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImVLPAREN3RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+temporary(sobel_1697000001) {
+	bitwidth 32;
+	signed 1;
+}
+temporary(sobel_1698000001) {
+	bitwidth 32;
+	signed 1;
+}
+variable(PImHLPAREN3RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImVLPAREN4RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImVLPAREN5RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImVLPAREN6RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImVLPAREN7RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+temporary(sobel_1697000002) {
+	bitwidth 32;
+	signed 1;
+}
+temporary(sobel_1698000002) {
+	bitwidth 32;
+	signed 1;
+}
+variable(PImHLPAREN7RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(PImVLPAREN8RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+temporary(sobel_1697000003) {
+	bitwidth 32;
+	signed 1;
+}
+temporary(sobel_1698000003) {
+	bitwidth 32;
+	signed 1;
+}
+variable(PImHLPAREN8RPAREN) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+temporary(sobel_1706) {
+	bitwidth 32;
+	signed 1;
+}
+temporary(sobel_1707) {
+	bitwidth 32;
+	signed 1;
+}
+variable(M) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(H) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(M000001) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(H000001) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+temporary(sobel_1706000001) {
+	bitwidth 32;
+	signed 1;
+}
+temporary(sobel_1707000001) {
+	bitwidth 32;
+	signed 1;
+}
+variable(M000002) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(H000002) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(M000003) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(H000003) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+temporary(sobel_1706000002) {
+	bitwidth 32;
+	signed 1;
+}
+temporary(sobel_1707000002) {
+	bitwidth 32;
+	signed 1;
+}
+variable(M000004) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(H000004) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(M000005) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+variable(H000005) {
+	bitwidth 32;
+	signed 1;
+	value 0;
+}
+operation(op0)  {
+	function ltmux;
+	read PImInLPAREN2RPAREN,PImInLPAREN3RPAREN,PImInLPAREN2RPAREN,PImInLPAREN3RPAREN;
+	write min;
+}
+operation(op1)  {
+	function gtmux;
+	read PImInLPAREN3RPAREN,PImInLPAREN2RPAREN,PImInLPAREN3RPAREN,PImInLPAREN2RPAREN;
+	write max1;
+}
+operation(op2)  {
+	function gtmux;
+	read min,PImInLPAREN1RPAREN,min,PImInLPAREN1RPAREN;
+	write max2;
+}
+operation(op3)  {
+	function ltmux;
+	read max1,max2,max1,max2;
+	write PImTmpLPAREN2RPAREN;
+}
+operation(op4)  {
+	function ltmux;
+	read PImInLPAREN3RPAREN,PImInLPAREN4RPAREN,PImInLPAREN3RPAREN,PImInLPAREN4RPAREN;
+	write min000001;
+}
+operation(op5)  {
+	function gtmux;
+	read PImInLPAREN4RPAREN,PImInLPAREN3RPAREN,PImInLPAREN4RPAREN,PImInLPAREN3RPAREN;
+	write max1000001;
+}
+operation(op6)  {
+	function gtmux;
+	read min000001,PImInLPAREN2RPAREN,min000001,PImInLPAREN2RPAREN;
+	write max2000001;
+}
+operation(op7)  {
+	function ltmux;
+	read max1000001,max2000001,max1000001,max2000001;
+	write PImTmpLPAREN3RPAREN;
+}
+operation(op8)  {
+	function ltmux;
+	read PImInLPAREN4RPAREN,PImInLPAREN5RPAREN,PImInLPAREN4RPAREN,PImInLPAREN5RPAREN;
+	write min000002;
+}
+operation(op9)  {
+	function gtmux;
+	read PImInLPAREN5RPAREN,PImInLPAREN4RPAREN,PImInLPAREN5RPAREN,PImInLPAREN4RPAREN;
+	write max1000002;
+}
+operation(op10)  {
+	function gtmux;
+	read PImInLPAREN3RPAREN,min000002,PImInLPAREN3RPAREN,min000002;
+	write max2000002;
+}
+operation(op11)  {
+	function ltmux;
+	read max1000002,max2000002,max1000002,max2000002;
+	write PImTmpLPAREN4RPAREN;
+}
+operation(op12)  {
+	function ltmux;
+	read PImInLPAREN5RPAREN,PImInLPAREN6RPAREN,PImInLPAREN5RPAREN,PImInLPAREN6RPAREN;
+	write min000003;
+}
+operation(op13)  {
+	function gtmux;
+	read PImInLPAREN6RPAREN,PImInLPAREN5RPAREN,PImInLPAREN6RPAREN,PImInLPAREN5RPAREN;
+	write max1000003;
+}
+operation(op14)  {
+	function gtmux;
+	read PImInLPAREN4RPAREN,min000003,PImInLPAREN4RPAREN,min000003;
+	write max2000003;
+}
+operation(op15)  {
+	function ltmux;
+	read max1000003,max2000003,max1000003,max2000003;
+	write PImTmpLPAREN5RPAREN;
+}
+operation(op16)  {
+	function ltmux;
+	read PImInLPAREN6RPAREN,PImInLPAREN7RPAREN,PImInLPAREN6RPAREN,PImInLPAREN7RPAREN;
+	write min000004;
+}
+operation(op17)  {
+	function gtmux;
+	read PImInLPAREN7RPAREN,PImInLPAREN6RPAREN,PImInLPAREN7RPAREN,PImInLPAREN6RPAREN;
+	write max1000004;
+}
+operation(op18)  {
+	function gtmux;
+	read PImInLPAREN5RPAREN,min000004,PImInLPAREN5RPAREN,min000004;
+	write max2000004;
+}
+operation(op19)  {
+	function ltmux;
+	read max1000004,max2000004,max1000004,max2000004;
+	write PImTmpLPAREN6RPAREN;
+}
+operation(op20)  {
+	function ltmux;
+	read PImInLPAREN7RPAREN,PImInLPAREN8RPAREN,PImInLPAREN7RPAREN,PImInLPAREN8RPAREN;
+	write min000005;
+}
+operation(op21)  {
+	function gtmux;
+	read PImInLPAREN8RPAREN,PImInLPAREN7RPAREN,PImInLPAREN8RPAREN,PImInLPAREN7RPAREN;
+	write max1000005;
+}
+operation(op22)  {
+	function gtmux;
+	read PImInLPAREN6RPAREN,min000005,PImInLPAREN6RPAREN,min000005;
+	write max2000005;
+}
+operation(op23)  {
+	function ltmux;
+	read max1000005,max2000005,max1000005,max2000005;
+	write PImTmpLPAREN7RPAREN;
+}
+operation(op24)  {
+	function ltmux;
+	read PImInLPAREN9RPAREN,PImInLPAREN8RPAREN,PImInLPAREN9RPAREN,PImInLPAREN8RPAREN;
+	write min000006;
+}
+operation(op25)  {
+	function gtmux;
+	read PImInLPAREN8RPAREN,PImInLPAREN9RPAREN,PImInLPAREN8RPAREN,PImInLPAREN9RPAREN;
+	write max1000006;
+}
+operation(op26)  {
+	function gtmux;
+	read PImInLPAREN7RPAREN,min000006,PImInLPAREN7RPAREN,min000006;
+	write max2000006;
+}
+operation(op27)  {
+	function ltmux;
+	read max1000006,max2000006,max1000006,max2000006;
+	write PImTmpLPAREN8RPAREN;
+}
+operation(op28)  {
+	function ltmux;
+	read PImTmpLPAREN4RPAREN,PImTmpLPAREN7RPAREN,PImTmpLPAREN4RPAREN,PImTmpLPAREN7RPAREN;
+	write min000007;
+}
+operation(op29)  {
+	function gtmux;
+	read PImTmpLPAREN4RPAREN,PImTmpLPAREN7RPAREN,PImTmpLPAREN4RPAREN,PImTmpLPAREN7RPAREN;
+	write max1000007;
+}
+operation(op30)  {
+	function gemux;
+	read PImTmpLPAREN1RPAREN,min000007,PImInLPAREN1RPAREN,min000007;
+	write max2000007;
+}
+operation(op31)  {
+	function ltmux;
+	read max2000007,max1000007,max2000007,max1000007;
+	write PImTmp2LPAREN4RPAREN;
+}
+operation(op32)  {
+	function ltmux;
+	read PImTmpLPAREN5RPAREN,PImTmpLPAREN8RPAREN,PImTmpLPAREN5RPAREN,PImTmpLPAREN8RPAREN;
+	write min000008;
+}
+operation(op33)  {
+	function gtmux;
+	read PImTmpLPAREN5RPAREN,PImTmpLPAREN8RPAREN,PImTmpLPAREN5RPAREN,PImTmpLPAREN8RPAREN;
+	write max1000008;
+}
+operation(op34)  {
+	function lemux;
+	read min000008,PImTmpLPAREN2RPAREN,PImInLPAREN2RPAREN,min000008;
+	write max2000008;
+}
+operation(op35)  {
+	function ltmux;
+	read max1000008,max2000008,max1000008,max2000008;
+	write PImTmp2LPAREN5RPAREN;
+}
+operation(op36)  {
+	function ltmux;
+	read PImTmpLPAREN9RPAREN,PImTmpLPAREN6RPAREN,PImTmpLPAREN9RPAREN,PImTmpLPAREN6RPAREN;
+	write min000009;
+}
+operation(op37)  {
+	function gtmux;
+	read PImTmpLPAREN9RPAREN,PImTmpLPAREN6RPAREN,PImTmpLPAREN9RPAREN,PImTmpLPAREN6RPAREN;
+	write max1000009;
+}
+operation(op38)  {
+	function gemux;
+	read PImTmpLPAREN3RPAREN,min000009,PImInLPAREN3RPAREN,min000009;
+	write max2000009;
+}
+operation(op39)  {
+	function ltmux;
+	read max2000009,max1000009,max2000009,max1000009;
+	write PImTmp2LPAREN6RPAREN;
+}
+operation(op40)  {
+	function sub;
+	read PImTmp2LPAREN3RPAREN,PImTmp2LPAREN1RPAREN;
+	write PImVLPAREN2RPAREN;
+}
+operation(op41)  {
+	function sll;
+	read PImTmp2LPAREN2RPAREN,const_1;
+	write sobel_1697;
+}
+operation(op42)  {
+	function add;
+	read PImTmp2LPAREN1RPAREN,PImTmp2LPAREN3RPAREN;
+	write sobel_1698;
+}
+operation(op43)  {
+	function add;
+	read sobel_1697,sobel_1698;
+	write PImHLPAREN2RPAREN;
+}
+operation(op44)  {
+	function sub;
+	read PImTmp2LPAREN4RPAREN,PImTmp2LPAREN2RPAREN;
+	write PImVLPAREN3RPAREN;
+}
+operation(op45)  {
+	function sll;
+	read PImTmp2LPAREN3RPAREN,const_1;
+	write sobel_1697000001;
+}
+operation(op46)  {
+	function add;
+	read PImTmp2LPAREN2RPAREN,PImTmp2LPAREN4RPAREN;
+	write sobel_1698000001;
+}
+operation(op47)  {
+	function add;
+	read sobel_1697000001,sobel_1698000001;
+	write PImHLPAREN3RPAREN;
+}
+operation(op48)  {
+	function sub;
+	read PImTmp2LPAREN5RPAREN,PImTmp2LPAREN3RPAREN;
+	write PImVLPAREN4RPAREN;
+}
+operation(op49)  {
+	function sub;
+	read PImTmp2LPAREN6RPAREN,PImTmp2LPAREN4RPAREN;
+	write PImVLPAREN5RPAREN;
+}
+operation(op50)  {
+	function sub;
+	read PImTmp2LPAREN7RPAREN,PImTmp2LPAREN5RPAREN;
+	write PImVLPAREN6RPAREN;
+}
+operation(op51)  {
+	function sub;
+	read PImTmp2LPAREN8RPAREN,PImTmp2LPAREN6RPAREN;
+	write PImVLPAREN7RPAREN;
+}
+operation(op52)  {
+	function sll;
+	read PImTmp2LPAREN7RPAREN,const_1;
+	write sobel_1697000002;
+}
+operation(op53)  {
+	function add;
+	read PImTmp2LPAREN8RPAREN,PImTmp2LPAREN6RPAREN;
+	write sobel_1698000002;
+}
+operation(op54)  {
+	function add;
+	read sobel_1697000002,sobel_1698000002;
+	write PImHLPAREN7RPAREN;
+}
+operation(op55)  {
+	function sub;
+	read PImTmp2LPAREN9RPAREN,PImTmp2LPAREN7RPAREN;
+	write PImVLPAREN8RPAREN;
+}
+operation(op56)  {
+	function sll;
+	read PImTmp2LPAREN8RPAREN,const_1;
+	write sobel_1697000003;
+}
+operation(op57)  {
+	function add;
+	read PImTmp2LPAREN7RPAREN,PImTmp2LPAREN9RPAREN;
+	write sobel_1698000003;
+}
+operation(op58)  {
+	function add;
+	read sobel_1697000003,sobel_1698000003;
+	write PImHLPAREN8RPAREN;
+}
+operation(op59)  {
+	function sll;
+	read PImVLPAREN4RPAREN,const_1;
+	write sobel_1706;
+}
+operation(op60)  {
+	function add;
+	read PImVLPAREN7RPAREN,PImVLPAREN1RPAREN;
+	write sobel_1707;
+}
+operation(op61)  {
+	function add;
+	read sobel_1707,sobel_1706;
+	write M;
+}
+operation(op62)  {
+	function sub;
+	read PImHLPAREN1RPAREN,PImHLPAREN7RPAREN;
+	write H;
+}
+operation(op63)  {
+	function abs;
+	read M;
+	write M000001;
+}
+operation(op64)  {
+	function abs;
+	read H;
+	write H000001;
+}
+operation(op65)  {
+	function gemux;
+	read M000001,H000001,M000001,H000001;
+	write PImOutLPAREN4RPAREN;
+}
+operation(op66)  {
+	function sll;
+	read PImVLPAREN5RPAREN,const_1;
+	write sobel_1706000001;
+}
+operation(op67)  {
+	function add;
+	read PImVLPAREN2RPAREN,PImVLPAREN8RPAREN;
+	write sobel_1707000001;
+}
+operation(op68)  {
+	function add;
+	read sobel_1707000001,sobel_1706000001;
+	write M000002;
+}
+operation(op69)  {
+	function sub;
+	read PImHLPAREN2RPAREN,PImHLPAREN8RPAREN;
+	write H000002;
+}
+operation(op70)  {
+	function abs;
+	read M000002;
+	write M000003;
+}
+operation(op71)  {
+	function abs;
+	read H000002;
+	write H000003;
+}
+operation(op72)  {
+	function gemux;
+	read M000003,H000003,M000003,H000003;
+	write PImOutLPAREN5RPAREN;
+}
+operation(op73)  {
+	function sll;
+	read PImVLPAREN6RPAREN,const_1;
+	write sobel_1706000002;
+}
+operation(op74)  {
+	function add;
+	read PImVLPAREN3RPAREN,PImVLPAREN9RPAREN;
+	write sobel_1707000002;
+}
+operation(op75)  {
+	function add;
+	read sobel_1707000002,sobel_1706000002;
+	write M000004;
+}
+operation(op76)  {
+	function sub;
+	read PImHLPAREN3RPAREN,PImHLPAREN9RPAREN;
+	write H000004;
+}
+operation(op77)  {
+	function abs;
+	read M000004;
+	write M000005;
+}
+operation(op78)  {
+	function abs;
+	read H000004;
+	write H000005;
+}
+operation(op79)  {
+	function gemux;
+	read M000005,H000005,M000005,H000005;
+	write PImOutLPAREN6RPAREN;
+}
+sink(sobel_end) {
+	targets PImOutLPAREN4RPAREN,
+	PImOutLPAREN5RPAREN,
+	PImOutLPAREN6RPAREN;
+}

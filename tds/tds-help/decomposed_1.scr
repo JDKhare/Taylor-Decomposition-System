@@ -1,0 +1,35 @@
+echo "load the polynomial and set its correct order"
+poly F=w1*(w2*p+y)+x*(z*u+q*w1)
+bottom w2
+bottom w1
+top y
+top p
+top q
+top u
+top z
+top x
+echo "show the polynomial"
+show
+echo "decompose the polynomial"
+decompose
+echo "stop at irreducible"
+show 
+echo "reorder w1, on top of its closest parent"
+bblup w1
+bblup w1
+bblup w1
+bblup w1
+bblup w1
+echo "show the modified TED, due to reorder"
+show
+echo "continue decomposing"
+decompose
+echo "show final decomposition"
+show
+echo "show corresponding DFG"
+show -d
+echo "show its scheduling"
+dfgschedule -m 2
+show -d
+echo "latency = 2MPY+2ADD"
+echo "resource = 3MPY, 2ADD"

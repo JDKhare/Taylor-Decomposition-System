@@ -1,0 +1,660 @@
+# builtin functions
+function(syndrome){
+	inputs	recd0,recd1,recd2,recd3,recd4,recd5,recd6,recd7,recd8,recd9,recd10,recd11,recd12,recd13,recd14;
+	outputs s0,s1,s2,s3,syn_error;
+}
+function(polylocal){
+	inputs	 s0,s1,s2,s3;
+	outputs  lambda0,lambda1,lambda2,lambda3;
+}
+function(polyeval){
+	inputs	 deg_lambdas,s0,s1,s2,s3,lambda0,lambda1,lambda2,lambda3;
+	outputs  deg_omegas,omega0,omega1,omega2,omega3;
+}
+function(eval){
+	inputs	g,deg_lambda,deg_omega,lambda0,lambda1,lambda2,lambda3,s0,s1,s2,s3,omega0,omega1,omega2,omega3,root0,root1,root2;
+	outputs  den,numo1,num2;
+}
+function(correction){
+	inputs	recdposerre,num1,num2,den;
+	outputs recdposerrs;
+}
+
+function(discriminant){
+	inputs	a, b;
+	outputs o;
+}
+function(modnn){
+	inputs	x;
+	outputs y;
+}
+function(carre){
+	inputs	a;
+	outputs o;
+}
+function(mac){
+	inputs	a, b, c;
+	outputs o;
+}
+function(INV) {
+   inputs X,Y;
+   outputs S;
+}
+function(ACS4) {
+   inputs s,a,t,b,u,c,v,d;
+   outputs s4;
+}
+function(ACS2) {
+   inputs s,a,t,b;
+   outputs s2;
+}
+function(min4) {
+   inputs x0,x1,x2,x3;
+   outputs s3;
+}
+function(min2) {
+   inputs x0,x1;
+   outputs s1;
+}
+function(ACS) {
+   inputs bm, indexes, nmh, nml;
+   outputs s;
+}
+function(BM) {
+   inputs yd;
+   outputs MB_S;
+}
+function(SP) {
+   inputs sph, spl, nm;
+   outputs s;
+}
+function(CS) {
+   inputs e1, e2;
+   outputs s;
+}
+function(Extract) {
+   inputs e, bt;
+   outputs s;
+} 
+
+function(assign) {	# a = o
+	inputs	a;
+	outputs o;
+}
+	
+function(or) {		# o <= a or b (bitwise |)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+
+function(or_fp) {		# o <= a or b (bitwise |)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(and) {		# o <= a and b (bitwise)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(and_fp) {		# o <= a and b (bitwise)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(not) {		# o <= not a (bitwise ~)
+	inputs	a;
+	outputs o;
+	carac_dependency none; #max_inputs;
+}
+
+
+function(not_fp) {		# o <= not a (bitwise ~)
+	inputs	a;
+	outputs o;
+	carac_dependency none; #max_inputs;
+}
+
+
+
+function(truth_or) {		# o <= a or b (boolean ||)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(truth_or_fp) {		# o <= a or b (boolean ||)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+
+function(truth_and) {		# o <= a and b (boolean &&)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+
+function(truth_and_fp) {		# o <= a and b (boolean &&)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(truth_not) {		# o <= not a (boolean !)
+	inputs	a;
+	outputs o;
+	carac_dependency none; #max_inputs;
+}
+
+
+function(truth_not_fp) {		# o <= not a (boolean !)
+	inputs	a;
+	outputs o;
+	carac_dependency none; #max_inputs;
+}
+
+function(eq) {		# o <= a == b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(eq_fp) {		# o <= a == b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+
+function(ne) {		# o <= a != b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(ne_fp) {		# o <= a != b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(lt) {		# o <= a < b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(lt_fp) {		# o <= a < b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(le) {
+	inputs	a, b;	# o <= a <= b
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(le_fp) {
+	inputs	a, b;	# o <= a <= b
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(gt) {		# o <= a > b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(gt_fp) {		# o <= a > b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(ge) {		# o <= a >= b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(ge_fp) {		# o <= a >= b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+
+function(add) {		# o <= a + b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+	
+function(add_fp) {		# o <= a + b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+
+function(sub) {		# o <= a - b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(sub_fp) {		# o <= a - b
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+
+function(mul) {		# o <= a * b
+	inputs	 a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(mod) {		# o <= a modulo b
+	inputs	 a, b;
+	outputs o;
+	carac_dependency min_inputs;
+}
+
+function(div) {		# o <= a / b
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(uminus) {	# o <= -a
+	inputs	a;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(nand) {	# o <= a nand b (bitwise)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(nand_fp) {	# o <= a nand b (bitwise)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+
+function(nor) {		# o <= a nor b (bitwise)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(nor_fp) {		# o <= a nor b (bitwise)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+
+function(xor) {		# o <= a xor b (bitwise)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(xor_fp) {		# o <= a xor b (bitwise)
+	inputs	a, b;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+# no implementation of this function in VHDL
+#function(rem) {		# o <= remainder of (a / b)
+#	inputs	a, b;
+#	outputs o;
+#}
+
+# no implementation of this function in VHDL
+#function(pow) {		# o <= a power b (a**b)
+#	inputs	a, b;
+#	outputs o;
+#}
+
+function(abs) {		# o <= absolute value of a
+	inputs	a;
+	outputs o;
+	carac_dependency max_inputs;
+}
+
+function(sll) {		# o <= a shifted left logicaly by b bits
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(srl) {		# o <= a shifted right logicaly by b bits
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(sla) {		# o <= a shifted left aritmeticaly by b bits
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(sra) {		# o <= a shifted right arithmeticaly by b bits
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(rol) {		# o <= a rolled over left by b bits
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(ror) {		# o <= rolled over right by b bits
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(eqmux) {	# o <= if a == b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(eqmux_fp) {	# o <= if a == b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+
+function(nemux) {	# o <= if a != b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(nemux_fp) {	# o <= if a != b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(ltmux) {	# o <= if a < b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(ltmux_fp) {	# o <= if a < b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+
+function(lemux) {	# o <= if a <= b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(lemux_fp) {	# o <= if a <= b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(gemux) {	# o <= if a >= b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(gemux_fp) {	# o <= if a >= b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+
+function(gtmux) {	# o <= if a > b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(gtmux_fp) {	# o <= if a > b then c else d
+	inputs	a, b, c, d;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+
+function(shr4div) {	# division of a by 2**b when b is odd
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(shr) {	# division of a by 2**b
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(shl) {	# multiplication of a by 2**b
+	inputs	a, b;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(bitselect) {	
+	inputs	a, b;
+	outputs o;
+	carac_dependency none;
+}
+
+function(sliceread) {	
+	inputs	a, b, c;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(slicewrite) {	
+	inputs	a, b, c;
+	outputs o;
+	carac_dependency all_inputs;
+}
+
+function(mem_write) {	
+	inputs	value, index, tab;
+	outputs ref;
+}
+
+
+function(mem_read) {	
+	inputs	index, tab;
+	outputs value;
+}
+
+# functions resize
+
+function(trnwrap) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(trnsat) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(trnsatzero) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(trnsatsym) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(rndwrap) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(rndsat) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(rndsatzero) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(rndsatsym) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(trnzerowrap) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(trnzerosat) {
+	inputs a;
+	outputs o;
+	
+}
+
+function(trnzerosatzero) {
+	inputs a;
+	outputs o;
+}
+
+function(trnzerosatsym) {
+	inputs a;
+	outputs o;
+}
+
+function(rndinfwrap) {
+	inputs a;
+	outputs o;
+}
+
+function(rndinfsat) {
+	inputs a;
+	outputs o;
+}
+
+function(rndinfsatzero) {
+	inputs a;
+	outputs o;
+}
+
+function(rndinfsatsym) {
+	inputs a;
+	outputs o;
+}
+
+function(rndmininfwrap) {
+	inputs a;
+	outputs o;
+}
+
+function(rndmininfsat) {
+	inputs a;
+	outputs o;
+}
+
+function(rndmininfsatzero) {
+	inputs a;
+	outputs o;
+}
+
+function(rndmininfsatsym) {
+	inputs a;
+	outputs o;
+}
+
+function(rndconvwrap) {
+	inputs a;
+	outputs o;
+}
+
+function(rndconvsat) {
+	inputs a;
+	outputs o;
+}
+
+function(rndconvsatzero) {
+	inputs a;
+	outputs o;
+}
+
+function(rndconvsatsym) {
+	inputs a;
+	outputs o;
+}
+
+
+function(rndzerowrap) {
+	inputs a;
+	outputs o;
+}
+
+function(rndzerosat) {
+	inputs a;
+	outputs o;
+}
+
+function(rndzerosatzero) {
+	inputs a;
+	outputs o;
+}
+
+function(rndzerosatsym) {
+	inputs a;
+	outputs o;
+}
+
+function(resize) {
+	inputs a;
+	outputs o;
+}
+

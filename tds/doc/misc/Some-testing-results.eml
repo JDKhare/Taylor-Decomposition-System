@@ -1,0 +1,302 @@
+Received: from hermes.ecs.umass.edu (128.119.91.230) by meltdown.ecs.umass.edu
+ (128.119.91.248) with Microsoft SMTP Server id 8.2.255.0; Tue, 17 Jul 2012
+ 11:03:38 -0400
+Received: from [192.168.1.108]
+ (209-6-145-112.c3-0.bkl-ubr1.sbo-bkl.ma.cable.rcn.com [209.6.145.112])
+	(authenticated bits=0)	by hermes.ecs.umass.edu (8.14.2/8.14.2) with ESMTP id
+ q6HF42lo013437	(version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-SHA bits=256
+ verify=NO);	Tue, 17 Jul 2012 11:04:03 -0400
+From: daniel <dgomezpr@ecs.umass.edu>
+To: "Maciej J. Ciesielski" <ciesiel@ecs.umass.edu>
+CC: "nicolas.simon@irisa.fr" <nicolas.simon@irisa.fr>
+Date: Tue, 17 Jul 2012 11:04:07 -0400
+Subject: Re: Some testing results
+Thread-Topic: Some testing results
+Thread-Index: Ac1kLVjR1kDy+F5jQnqNKVb21cyKzQ==
+Message-ID: <50057EE7.30508@ecs.umass.edu>
+References: <96CDECE9F7704B4D9C0DA9488C0B357EC6D6DD0618@meltdown>
+In-Reply-To: <96CDECE9F7704B4D9C0DA9488C0B357EC6D6DD0618@meltdown>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Organization-AuthSource: meltdown.ecs.umass.edu
+X-MS-Has-Attach:
+X-MS-Exchange-Organization-SenderIdResult: Pass
+X-MS-Exchange-Organization-SCL: 0
+X-MS-Exchange-Organization-PCL: 2
+X-MS-Exchange-Organization-PRD: ecs.umass.edu
+X-MS-TNEF-Correlator:
+user-agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20120711
+ Thunderbird/14.0
+received-spf: Pass (meltdown.ecs.umass.edu: domain of dgomezpr@ecs.umass.edu
+ designates 128.119.91.230 as permitted sender)
+ receiver=meltdown.ecs.umass.edu; client-ip=128.119.91.230;
+ helo=hermes.ecs.umass.edu;
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Quick answers:
+
+1) First of all, are you performing retiming in the system? I would=20
+start by there as all these designs are heavily retimed. Now the second=20
+issue, and this is what I asked last week is that some variables in the=20
+designs given are pseudo constants, and if I treat them as such I could=20
+retime across them and improve the design (at least on theory it expand=20
+the design space exploration). Besides dcse, have you try to reorder=20
+using more advance commands such as:
+
+reorder* --dLatency --gMUX --gLatency --annealing
+
+(in the above command, the first option is the least important=20
+--dLatency and the last option is the most important --gLatency; and you=20
+can missmatch in any order the optimization process; for more you can=20
+type reorder* -h) The main difference between reorder and reorder* is=20
+that the first command "reorder" has defined cost function to optimize,=20
+while reorder* allows you to define multiple criteria to optimize and=20
+allows you to define its sequence. (But remember, the last one defined=20
+is the most important).
+
+The parameters to play with the annealing are not available in your=20
+version, but I can expose them for you if you need to control the=20
+annealing algorithm to speed up or modify its cooling.
+
+2) The sfg.xmlerror or alike, is part of my testings that I forgot to=20
+remove, it doesnt point to any error. I was comparing transparent=20
+results if I could write back whatever was read. I'll check on my=20
+version if I had the same dummy file being generaterd.
+
+3) regarding the dfgflatten, you are getting into errors because you are=20
+not doing "ted2dfg -n" first. With that I've been able to run it through=20
+my system before (I'll check it again with the later versions, as my=20
+regression tests for XML at the moment have been limited to read/write -=20
+I'll add golden cases)
+
+4) The flattening - it's something I'm curious as well, I've made some=20
+improvements but feel free to send me the easists tests that will make=20
+the case for a very good paper, and I'll try to accommodate them in the=20
+software.
+
+hope to hear back from you before your travels,
+and hoping you have good and safe travels back home,
+
+best regards,
+daniel
+
+On 7/17/2012 10:17 AM, Maciej J. Ciesielski wrote:
+> Hi Daniel,
+>
+> Before I forget:
+> I guess the new command <dfgfatten> cannot completely eliminate <flatten>=
+ (on TED) since it does not remove redundant parts, seen only on the canoni=
+cal representation, correct ? (as you can see I am anxious to have the flat=
+tening work in some form for me).
+>
+> I started testing TDS with their xml examples. Most of the designs (FIR, =
+IIR) cannot be improved by TDS, as they are very well structured and shallo=
+w. I also tried FFT, where some modifications can be made. I tried dcse, wh=
+ich is probably our best weapon for this (unless you have better suggestion=
+s) but am getting results that are worse that the original. Using scse stil=
+l runs through all the extraction candidates (does it do the extraction? I =
+cannot tell since it is too large to be displayed, but I saw it being done =
+in smaller examples).
+>
+> The program often produces file "sfg.xmlerror", even if there were no rep=
+orted errors. What is the meaning of it ?
+>
+> FFT64
+> initial results:            Mult =3D 768, Add =3D 630, Sub =3D 576, Laten=
+cy =3D 3
+> Results after dcse:  Mult =3D 768, Add =3D 729, Sub =3D 576, Latency =3D =
+3
+> It looks that dcse runs indiscriminately without checking if it improves =
+the DFG. Maybe it should be stopped after subexpression elimination, before=
+ entering into the phase of searching for redundant multiplications, etc. I=
+ also tried scse and lcse, which stop earlier with no improvement. Interest=
+ingly, the <decompose> works best (?), given the following results:
+> After decompose:   Mult =3D 768, Add =3D 351, Sub =3D 576, but adds nMULc=
+onst  =3D  153 and Latency =3D 4.
+>
+> Any suggestions what would work best ?
+>
+> VOLTERRA
+> Here we run into an error when transforming from DFG to TED:
+>   volterra > tds
+> Taylor Decomposition System
+> Compiled at: 05:23:27(GMT), Jul 16 2012
+> Tds 01> read sfg.xml
+> Tds 02> dfgflatten
+> Tds 03> dfg2ted
+> Error: Operator DIV prevents ted2dfg. Use dfg2ntl and then ntl2ted
+> Tds 03> dfg2ntl
+> tds: ./src/dfg/DfgNode.inl:34: wedge dfg::DfgNode::getConst() const: Asse=
+rtion `isConst()' failed.
+> Aborted
+>   volterra >
+>
+> Tomorrow is my last day here, leaving Thursday morning for Paris, and bac=
+k to Amherst on 22nd July.
+> We have to start planning your final defense !!
+>
+> Cheers,
+>
+>        MC
+>
+>
+> Maciej Ciesielski
+> Professor, Associate Department Head
+> ECE Dept, University of Massachusetts , Amherst, MA 01003
+> phone: (413) 545-0401    fax:   (413) 545-1993
+> http://www.ecs.umass.edu/ece/labs/vlsicad/ciesielski.html
+> ________________________________________
+> From: daniel [dgomezpr@ecs.umass.edu]
+> Sent: Friday, July 13, 2012 6:32 AM
+> To: Nicolas Simon
+> Cc: Arnaud Tisserand; Maciej J. Ciesielski
+> Subject: Re: correction bug sur tdsxml
+>
+> Dear all,
+>
+> I presume there were no problems with the last version I sent, so I'll
+> be taking a small trip to Amherst for the rest of the day.
+>
+> best regards,
+> daniel
+>
+>
+> On 7/12/2012 10:13 AM, Nicolas Simon wrote:
+>> Autrement, pour notre probl=E8me, le flag -Wtype-limits permet d'affiche=
+r seulement ces probl=E8mes de typage et eviter les autres autres warning d=
+e -Wextra.
+>>
+>> Nicolas
+>>
+>> ----- Original Message -----
+>>> From: "Arnaud Tisserand" <arnaud.tisserand@irisa.fr>
+>>> To: "daniel" <dgomezpr@ecs.umass.edu>
+>>> Cc: "Maciej Ciesielski" <ciesiel@ecs.umass.edu>, "nicolas simon" <nicol=
+as.simon@irisa.fr>, "Arnaud Tisserand"
+>>> <arnaud.tisserand@irisa.fr>
+>>> Sent: Thursday, 12 July, 2012 3:50:52 PM
+>>> Subject: Re: correction bug sur tdsxml
+>>>
+>>> On 07/12/2012 03:41 PM, daniel wrote:
+>>>> Vous avez raison, je pensais quand j'ai d=E9m=E9nag=E9 =E0 64 bits
+>>>> d=E9veloppement
+>>>> que je rencontrerais ce type de probl=E8mes, mais comme je n'ai
+>>>> jamais
+>>>> fait, j'ai totalement oubli=E9 de la faire.
+>>> voici comment =E9viter ce genre de bug (du moins certains):
+>>>
+>>> Voici un petit code:
+>>>
+>>> #include <string>
+>>> #include <iostream>
+>>> int main()
+>>> {
+>>>      std::string s("toto");
+>>>      std::cout << s << std::endl;
+>>>
+>>>      size_t   good =3D s.find("w");
+>>>      unsigned bad  =3D s.find("w");
+>>>
+>>>      std::cout << "good " << (good =3D=3D std::string::npos) << std::en=
+dl;
+>>>      std::cout << "bad  " << (bad  =3D=3D std::string::npos) << std::en=
+dl;
+>>>
+>>>      return 0;
+>>> }
+>>>
+>>>
+>>> qui donne (sur ma machine 64b, ubuntu 10.04):
+>>>
+>>>
+>>> toto
+>>> good 1
+>>> bad  0
+>>>
+>>>
+>>>
+>>> en compilant avec les warnings -Wall -Wextra on a:
+>>>
+>>>
+>>> g++ -Wall -Wextra str.cc
+>>> str.cc: In function =91int main()=92:
+>>> str.cc:12: warning: comparison is always false due to limited range
+>>> of
+>>> data type
+>>>
+>>>
+>>> Sans warning (-Wextra) =E7a passe sans aucun message.
+>>>
+>>>
+>>> Cela va donc te donner un indication sur les parties critiques =E0
+>>> regarder. Cela ne va r=E9soudre tous les probl=E8mes entre 32 et 64 bit=
+s,
+>>> mais en supprimer quelques uns.
+>>>
+>>>> pensez-vous que je devrait faire la normalisation de caract=E8res
+>>>> sign=E9s
+>>>> et non sign=E9s =E0 ce point?
+>>> Non, ici c'est surtout de bien utiliser le type size_t pour tous les
+>>> arguments et retours li=E9s =E0 std::string quand c'est n=E9cessaire.
+>>>
+>>>
+>>> Bon courage ;-)
+>>>
+>>> Arnaud.
+>>>
+>>>
+>>>
+>>>> daniel
+>>>>
+>>>> On 7/12/2012 9:24 AM, Arnaud Tisserand wrote:
+>>>>> Salut Daniel,
+>>>>>
+>>>>> J'esp=E8re que tu vas bien.
+>>>>>
+>>>>> Avec Nicolas, nous avons trouv=E9 le bug dans tdsxml (je ne sais pas
+>>>>> trop le nom exact) qui donnait un "fatal error" sur un
+>>>>> s.replace(...).
+>>>>>
+>>>>> Il faut absolument que le type de retour de find soit un size_t et
+>>>>> pas
+>>>>> un unsigned.
+>>>>>
+>>>>> Sur le processor/distribution de Nicolas, on avait:
+>>>>>
+>>>>> sizeof(size_t) =3D 8
+>>>>> sizeof(unsigned) =3D 4
+>>>>>
+>>>>> et string::npos =3D 2^64 - 1
+>>>>>
+>>>>> donc un code avec:
+>>>>>
+>>>>> unsigned i
+>>>>> i =3D s.find(...)
+>>>>>
+>>>>> va "caster" le size_t en unsigned et donc perdre des bits.
+>>>>> cela va poser un gros probl=E8me pour la comparaison avec npos (qui
+>>>>> est
+>>>>> un size_t).
+>>>>>
+>>>>> Je pense que tu devrais changer tous les unsigned li=E9s =E0 aux
+>>>>> cha=EEnes
+>>>>> (std::string) par des size_t.
+>>>>>
+>>>>> En esp=E9rant que tout le reste marchera bien.
+>>>>>
+>>>>> Amicalement,
+>>>>> Arnaud.
+>>>>>
+>>>>>
+>>> --
+>>> Arnaud TISSERAND      CNRS - IRISA - Univ. Rennes       CAIRN group
+>>> IRISA-ENSSAT, 6 rue Kerampont, CS80518, 22305 Lannion cedex, France
+>>> arnaud.tisserand@irisa.fr         people.irisa.fr/Arnaud.Tisserand/
+>>>
+>>>
+>>>
+>
+

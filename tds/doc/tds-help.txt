@@ -1,0 +1,81 @@
+chopin [hm1]> tds
+Taylor Decomposition System
+Compiled at: 15:27:34(GMT), Sep 10 2018
+Tds 01> help
+ - balance              Balance the DFG or Netlist to minimize latency.
+ - bbldown              Move down the given variable one position.
+ - bblup                Move up the given variable one position.
+ - bottom               Move the given variable to the bottom.
+ - bottomdcse           CSE Dynamic, move candidates to bottom.
+ - bottomscse           CSE Static, move candidates to bottom.
+ - candidate            Show the candidates expression for CSE.
+ - compute              Annotate the bitwidths required for exact computation.
+ - cost                 Prints out the cost associated to this TED.
+ - dcse                 CSE Dynamic, extract all candidates available.
+ - decompose            Decompose the TED in its Normal Factor Form.
+ - dfactor              Dynamic factorization.
+ - dfg2ntl              Generate a Netlist from the DFG.
+ - dfg2ted              Generate a TED from the DFG.
+ - dfgarea              Balance the DFG to minimize the area.
+ - dfgevalconst         Evaluates explicit DFG constants
+ - dfgflatten           Smooths out all DFG outputs used as DFG inputs
+ - dfgschedule          Perform the scheduling of the DFG.
+ - erase                Erase a primary output from the TED.
+ - eval                 Evaluates a TED node.
+ - exchange             Exchange the position of two variables.
+ - explore              Performs a space exploration of the architecture, on development.
+ - extract              Extract primary outputs from the TED or Netlist.
+ - fixorder             Fixes the order broken by a retime operation.
+ - flip                 Flip the order of a linearized variable.
+ - info                 Print out TED information: statistic, etc.
+ - jumpAbove            Moves a variable above another one.
+ - jumpBelow            Moves a variable below another one.
+ - lcse                 CSE for linearized TED.
+ - linearize            Transform a non linear TED into a linear one.
+ - listvars             List the variables in a top to bottom order.
+ - load                 Load the environment.
+ - ntl2ted              Extract from a Netlist all parts representable by TED.
+ - optimize             Minimizes the bitwidth of a DFG keeping the maximum error bound.
+ - poly                 Construct a TED from a polynomial expression.
+ - print                Print out TED information: statistic, etc.
+ - printenv             Print the environment variables.
+ - printntl             Print out statistics of the Netlist.
+ - purge                Purge the TED, DFG and/or Netlist.
+ - quartus              Generates a Quartus file project, compiles it and report its frequency and logic elements.
+ - read                 Read a script, a CDFG, a TED or a DFG.
+ - reloc                Relocate the given variable to the desired position.
+ - remapshift           Remap chain of constant multipliers and additions in the DFG by shifters (<<).
+ - reorder              Reorder the variables in the TED (Pre-fixed cost).
+ - reorder*             Reorder the variables in the TED. (User defined cost)
+ - retime               Performs (forward/backward) retiming in TED.
+ - save                 Save the environment.
+ - scse                 CSE Static, extract one candidate at a time.
+ - set                  Set the variable bitwidth and other options.
+ - setenv               Set a environment variable.
+ - shifter              Replace TED edge multiplications by TED node constant variables.
+ - show                 Show the TED, DFG or Netlist graph.
+ - sift                 Heuristically optimize the level of the variable.
+ - sub                  Substitute an arithmetic expression by a variable
+ - ted2dfg              Generate a DFG from the TED.
+ - top                  Move the given variable to the top.
+ - tr                   Construct a TED from a set of DSP transforms.
+ - vars                 Preset the order of variables, before any TED is given.
+ - verify               Verifies that two TED outputs are the same.
+ - write                Write the existing NTL|DFG|TED into a*.[cdfg|dfg|ted] file.
+ -------- ALIASES
+ - flatten              ted2dfg -f; dfg2ted
+ - gautd                cost -d
+ - gautn                cost -n
+ - gautt                cost -t
+ - shifter*             shifter --ted; remapshift
+ - stats                print -s
+ -------- GENERAL
+ - ![bin]		System call to execute bin
+ - h[elp]		Print this help
+ - e[xit]		Exit the shell
+ - q[uit]		Quit the shell
+ - history		Prints all successfully executed commands and its execution times
+ - time			Show the elapsed time for the last command executed
+ - man			Prints the manual of the given command
+ - the shell accepts command completion. i.e. type dec<TAB> for decompose
+Tds 01> 

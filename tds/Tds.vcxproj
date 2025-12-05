@@ -1,0 +1,343 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BED62364-2385-4820-8A6B-41C04DB0995E}</ProjectGuid>
+    <RootNamespace>Tds</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\$(platform)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)\$(platform)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\$(platform)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Configuration)\$(platform)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\$(platform)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)\$(platform)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\$(platform)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Configuration)\$(platform)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ProjectName)32</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ProjectName)32</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)64</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)64</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./src/main;./src/data;./src/lib;./src/dfg;./src/ntk;./src/shell;./src/util;./src/transform;./src/poly;./src/ted;./src/tds;./src/convert;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>INLINE;_TDS_CONF_="$(Configuration)";_TDS_ARCH_="$(PlatformArchitecture)";_TDS_PLATF_="Win$(PlatformArchitecture)";_TDS_NULL_="";_TDS_PATH_="$(ProjectDir)";%(PreprocessorDefinitions);</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+    <Link>
+      <ShowProgress>NotSet</ShowProgress>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+      <TargetMachine>MachineX86</TargetMachine>
+      <HeapReserveSize>10</HeapReserveSize>
+      <StackReserveSize>10</StackReserveSize>
+    </Link>
+    <Manifest>
+      <VerboseOutput>true</VerboseOutput>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./src/main;./src/data;./src/lib;./src/dfg;./src/ntk;./src/shell;./src/util;./src/transform;./src/poly;./src/ted;./src/tds;./src/convert;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>INLINE;_TDS_CONF_="$(Configuration)";_TDS_ARCH_="$(PlatformArchitecture)";_TDS_PLATF_="Win$(PlatformArchitecture)";_TDS_PATH_="$(ProjectDir)";_ TDS_NULL_="";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <ProgramDataBaseFileName>$(IntDir)$(ProjectName).pdb</ProgramDataBaseFileName>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ShowIncludes>false</ShowIncludes>
+    </ClCompile>
+    <Link>
+      <ShowProgress>NotSet</ShowProgress>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AssemblyDebug>true</AssemblyDebug>
+    </Link>
+    <Manifest>
+      <VerboseOutput>true</VerboseOutput>
+    </Manifest>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>./src/convert;./src/data;./src/main;./src/lib;./src/dfg;./src/ntk;./src/shell;./src/util;./src/transform;./src/poly;./src/ted;./src/tds;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>INLINE;_TDS_CONF_="$(Configuration)";_TDS_ARCH_="$(PlatformArchitecture)";_TDS_PLATF_="Win$(PlatformArchitecture)";_TDS_PATH_="$(ProjectDir)";_ TDS_NULL_="";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level4</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <ShowProgress>NotSet</ShowProgress>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>./src/convert;./src/data;./src/main;./src/lib;./src/dfg;./src/ntk;./src/shell;./src/util;./src/transform;./src/poly;./src/ted;./src/tds;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>INLINE;_TDS_CONF_="$(Configuration)";_TDS_ARCH_="$(PlatformArchitecture)";_TDS_PLATF_="Win$(PlatformArchitecture)";_TDS_PATH_="$(ProjectDir)";_ TDS_NULL_="";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ShowProgress>NotSet</ShowProgress>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\3rdparty\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="src\dfg\XMLImport.cc" />
+    <ClCompile Include="src\lib\RNGenerator.cc" />
+    <ClCompile Include="src\main\main.cc" />
+    <ClCompile Include="src\ntk\Gaut.cc" />
+    <ClCompile Include="src\ntk\Quartus.cc" />
+    <ClCompile Include="src\ted\ATedNode.cc" />
+    <ClCompile Include="src\ted\ETedNode.cc" />
+    <ClCompile Include="src\ted\TedBitwidth.cc" />
+    <ClCompile Include="src\ted\TedContainer.cc" />
+    <ClCompile Include="src\ted\TedDecompose.cc" />
+    <ClCompile Include="src\ted\TedKids.cc" />
+    <ClCompile Include="src\ted\TedMan.cc" />
+    <ClCompile Include="src\ted\TedManCSE.cc" />
+    <ClCompile Include="src\ted\TedManDebug.cc" />
+    <ClCompile Include="src\ted\TedManEval.cc" />
+    <ClCompile Include="src\ted\TedManOrder.cc" />
+    <ClCompile Include="src\ted\TedManWriteTed.cc" />
+    <ClCompile Include="src\ted\TedNode.cc" />
+    <ClCompile Include="src\ted\TedNodeIterator.cc" />
+    <ClCompile Include="src\ted\TedOrder.cc" />
+    <ClCompile Include="src\ted\TedOrderCost.cc" />
+    <ClCompile Include="src\ted\TedOrderCostCustom.cc" />
+    <ClCompile Include="src\ted\TedOrderProper.cc" />
+    <ClCompile Include="src\ted\TedOrderReloc.cc" />
+    <ClCompile Include="src\ted\TedOrderStrategy.cc" />
+    <ClCompile Include="src\ted\TedOrderSwap.cc" />
+    <ClCompile Include="src\ted\TedParents.cc" />
+    <ClCompile Include="src\ted\TedRetiming.cc" />
+    <ClCompile Include="src\ted\TedVar.cc" />
+    <ClCompile Include="src\ted\TedVarMan.cc" />
+    <ClCompile Include="src\poly\pman.cc" />
+    <ClCompile Include="src\poly\pnode.cc" />
+    <ClCompile Include="src\poly\poly.cc" />
+    <ClCompile Include="src\tds\Environment.cc" />
+    <ClCompile Include="src\tds\Tds.cc" />
+    <ClCompile Include="src\tds\TdsCmd.cc" />
+    <ClCompile Include="src\transform\matrice.cpp" />
+    <ClCompile Include="src\util\CompilerMingWin.cc" />
+    <ClCompile Include="src\util\CompilerMsc.cpp" />
+    <ClCompile Include="src\util\csd.cc" />
+    <ClCompile Include="src\util\ParseOption.cc" />
+    <ClCompile Include="src\util\PrimeGenerator.cc" />
+    <ClCompile Include="src\util\string.cc" />
+    <ClCompile Include="src\util\system.cc" />
+    <ClCompile Include="src\util\SystemGcc.cc" />
+    <ClCompile Include="src\util\SystemLinux.cc" />
+    <ClCompile Include="src\util\SystemMsc.cc" />
+    <ClCompile Include="src\util\SystemWin.cc" />
+    <ClCompile Include="src\shell\shell.cc" />
+    <ClCompile Include="src\ntk\Node.cc" />
+    <ClCompile Include="src\ntk\Ntk.cc" />
+    <ClCompile Include="src\dfg\DfgBitReduction.cc" />
+    <ClCompile Include="src\dfg\DfgMan.cc" />
+    <ClCompile Include="src\dfg\DfgManDebug.cc" />
+    <ClCompile Include="src\dfg\DfgManFromTedMan.cc" />
+    <ClCompile Include="src\dfg\DfgManWrite.cc" />
+    <ClCompile Include="src\dfg\DfgNode.cc" />
+    <ClCompile Include="src\dfg\DfgOperator.cc" />
+    <ClCompile Include="src\dfg\DfgShifter.cc" />
+    <ClCompile Include="src\convert\Convert.cc" />
+    <ClCompile Include="src\convert\ConvertDfg2Ntl.cc" />
+    <ClCompile Include="src\convert\ConvertDfg2Ted.cc" />
+    <ClCompile Include="src\convert\ConvertDfg2TedError.cc" />
+    <ClCompile Include="src\convert\ConvertNtl2Ted.cc" />
+    <ClCompile Include="src\convert\ConvertTed2Dfg.cc" />
+    <ClCompile Include="src\convert\ConvertTed2DfgFactor.cc" />
+    <ClCompile Include="src\convert\MapDfgNode.cc" />
+    <ClCompile Include="src\convert\MapDfgPI.cc" />
+    <ClCompile Include="src\convert\MapDfgTed.cc" />
+    <ClCompile Include="src\data\Bitwidth.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\dfg\DfgOperator.inl" />
+    <None Include="src\ted\ETedNode.inl" />
+    <None Include="src\ted\TedContainer.inl" />
+    <None Include="src\ted\TedKids.inl" />
+    <None Include="src\ted\TedMan.inl" />
+    <None Include="src\ted\TedNode.inl" />
+    <None Include="src\ted\TedNodeRoot.inl" />
+    <None Include="src\ted\TedParents.inl" />
+    <None Include="src\ted\TedVar.inl" />
+    <None Include="src\ted\TedVarGroup.inl" />
+    <None Include="src\ted\TedVarMan.inl" />
+    <None Include="src\poly\pnode.inl" />
+    <None Include="src\util\ParseOption.inl" />
+    <None Include="src\ntk\Node.inl" />
+    <None Include="src\dfg\DfgMan.inl" />
+    <None Include="src\dfg\DfgNode.inl" />
+    <None Include="src\dfg\DfgShifter.inl" />
+    <None Include="src\data\Bitwidth.inl" />
+    <None Include="src\win resource\tds.aliases" />
+    <None Include="src\win resource\tds.ico" />
+    <None Include="tds.aliases" />
+    <None Include="ToDo" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\3rdparty\tinyxml2\tinyxml2.h" />
+    <ClInclude Include="src\dfg\XMLImport.h" />
+    <ClInclude Include="src\lib\RNGenerator.h" />
+    <ClInclude Include="src\ntk\Gaut.h" />
+    <ClInclude Include="src\ntk\Quartus.h" />
+    <ClInclude Include="src\ted\ATedNode.h" />
+    <ClInclude Include="src\ted\ETedNode.h" />
+    <ClInclude Include="src\ted\TedBitwidth.h" />
+    <ClInclude Include="src\ted\TedContainer.h" />
+    <ClInclude Include="src\ted\TedDecompose.h" />
+    <ClInclude Include="src\ted\TedKid.h" />
+    <ClInclude Include="src\ted\TedKids.h" />
+    <ClInclude Include="src\ted\TedKidsIterator.h" />
+    <ClInclude Include="src\ted\TedMan.h" />
+    <ClInclude Include="src\ted\TedNode.h" />
+    <ClInclude Include="src\ted\TedNodeIterator.h" />
+    <ClInclude Include="src\ted\TedNodeRoot.h" />
+    <ClInclude Include="src\ted\TedOrder.h" />
+    <ClInclude Include="src\ted\TedOrderCost.h" />
+    <ClInclude Include="src\ted\TedOrderCostCustom.h" />
+    <ClInclude Include="src\ted\TedOrderStrategy.h" />
+    <ClInclude Include="src\ted\TedParents.h" />
+    <ClInclude Include="src\ted\TedRegister.h" />
+    <ClInclude Include="src\ted\TedRetiming.h" />
+    <ClInclude Include="src\ted\TedVar.h" />
+    <ClInclude Include="src\ted\TedVarGroup.h" />
+    <ClInclude Include="src\ted\TedVarMan.h" />
+    <ClInclude Include="src\poly\pman.h" />
+    <ClInclude Include="src\poly\pnode.h" />
+    <ClInclude Include="src\poly\poly.h" />
+    <ClInclude Include="src\tds\Environment.h" />
+    <ClInclude Include="src\tds\Tds.h" />
+    <ClInclude Include="src\transform\Cmatrice.h" />
+    <ClInclude Include="src\transform\matrice.h" />
+    <ClInclude Include="src\util\CompilerMingWin.h" />
+    <ClInclude Include="src\util\CompilerMsc.h" />
+    <ClInclude Include="src\util\csd.h" />
+    <ClInclude Include="src\util\ParseOption.h" />
+    <ClInclude Include="src\util\PrimeGenerator.h" />
+    <ClInclude Include="src\util\types.h" />
+    <ClInclude Include="src\util\util.h" />
+    <ClInclude Include="src\shell\Completer.h" />
+    <ClInclude Include="src\shell\shell.h" />
+    <ClInclude Include="src\ntk\Node.h" />
+    <ClInclude Include="src\ntk\Ntk.h" />
+    <ClInclude Include="src\dfg\DfgBitReduction.h" />
+    <ClInclude Include="src\dfg\DfgMan.h" />
+    <ClInclude Include="src\dfg\DfgNode.h" />
+    <ClInclude Include="src\dfg\DfgOperator.h" />
+    <ClInclude Include="src\dfg\DfgShifter.h" />
+    <ClInclude Include="src\dfg\DfgStat.h" />
+    <ClInclude Include="src\lib\BinaryThreadedNode.h" />
+    <ClInclude Include="src\lib\BinaryThreadedTree.h" />
+    <ClInclude Include="src\lib\LinkedMap.h" />
+    <ClInclude Include="src\lib\LinkedSet.h" />
+    <ClInclude Include="src\lib\Mark.h" />
+    <ClInclude Include="src\convert\Convert.h" />
+    <ClInclude Include="src\convert\ConvertDfg2Ntl.h" />
+    <ClInclude Include="src\convert\ConvertDfg2Ted.h" />
+    <ClInclude Include="src\convert\ConvertDfg2TedError.h" />
+    <ClInclude Include="src\convert\ConvertMap.h" />
+    <ClInclude Include="src\convert\ConvertNtl2Ted.h" />
+    <ClInclude Include="src\convert\ConvertTed2Dfg.h" />
+    <ClInclude Include="src\convert\ConvertTed2DfgFactor.h" />
+    <ClInclude Include="src\convert\MapDfgNode.h" />
+    <ClInclude Include="src\convert\MapDfgPI.h" />
+    <ClInclude Include="src\convert\MapDfgTed.h" />
+    <ClInclude Include="src\data\Bitwidth.h" />
+    <ClInclude Include="src\data\Error.h" />
+    <ClInclude Include="src\win resource\resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="src\win resource\Tds.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

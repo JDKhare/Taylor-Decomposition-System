@@ -1,0 +1,9 @@
+###############################################################
+#reserved word    alias name     semi-colon separated commands#
+###############################################################
+alias             flatten         ted2dfg -f; dfg2ted
+alias             stats           print -s
+alias             shifter*        shifter --ted; remapshift
+alias             gautn           cost -n
+alias             gautd           cost -d
+alias             gautt           cost -t

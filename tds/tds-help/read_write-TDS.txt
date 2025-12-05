@@ -1,0 +1,50 @@
+Rading and writing files in TDS
+-------------------------------
+
+tds -f script_file.scr 
+	- will process the script file in the background.
+
+Tds 01> read -h
+usage: read -[hbc] input.[gc|mx|scr|cdfg]
+   [b] sets the netlist to combinational, only for gc files [default=false]
+   [c] load the value of constants, only for cdfg files [default=false]
+
+Meaning of option -c:
+	By default all constants (Co..) are treated as variables
+	With -c option, the actual integer values are used as labels on edges.
+
+   gc = old GAUT format
+   cdfg = GAUT2 format
+   mx   = matrix format (matrix of integer coefficients)
+   scr  = script format
+
+Tds> read  script_file.scr 
+	- to process the script.
+
+Tds> read  matrix.mx  
+	- reads the file in matrix coefficent format and produces a network.
+Example:
+	Taylor Decomposition System
+	Compiled at: 15:07(GMT), 05-20-2008
+	Tds 01> read matrix1.mx 
+	Tds 02> collapse
+	Tds 03> show
+	Tds 04> print -e
+	    m0_4 = X0+X1*3+X2*(-2)
+	    m1_4 = X0*3+X1*5+X2*3
+	    m2_4 = (X0*(-2)+X1+X2*(-3))*(-1)
+	Tds 05> 
+
+Tds> read  gaut_file.cdfg will read the cdfg file produced by Gaut2
+	- after that, use command <showntk> to show the network;
+	  make sure to issue <colapse> to create a TED from the network
+	  before issuing all the TED-related commands.
+
+Tds> write file.cdfg (prepared by Qian)
+	- to create a cdfg file (for Gaut2) from the network data base
+
+Tds> write -t file.cdfg (prepared by Daniel)
+	- to create a cdfg file from the TED data base.
+
+
+
